@@ -5,7 +5,7 @@ domlogs='/usr/local/apache/domlogs/'$USER; # Just to declare the domlog path.
 searchLogs() {
   if [ -z "$search_term" ]
   then
-    echo "Variable is empty. Continue w/ all."
+    echo "Variable is empty. Continue w/ all.";
   else
     echo "Picked up variable -- $search_term";
   fi
@@ -16,7 +16,7 @@ searchLogs() {
 
 if [ "${#}" == 0 ]
 then
-  search_term=null
+  search_term="";
   searchLogs $search_term
 else
   echo "Nothing picked up. Listing all options.. ";
