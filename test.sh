@@ -29,7 +29,6 @@ searchLogs() {
     
     find $domlogs -type f -iname "*$search_term*" -print0 | while IFS= read -r -d $'\0' line; do
       echo "$line";
-      ls -l "$line";
     done
   fi
 }
