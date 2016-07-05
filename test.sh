@@ -1,19 +1,20 @@
 #!/bin/bash
-clear;
+domlogs='/usr/local/apache/domlogs/'$USER; # Just to declare the domlog path.
 
-allOptions() {
-  echo "Test!";
+## Start off by initializing the functions
+searchLogs() {
+  echo "Testing -- " $ search_term;
 }
 
-doSearch() {
-  echo "Test -- $1";
-}
+## Start the actual code (after picking up parameters and what not)
+## If something is picked up, it will declare the value and search for it. Otherwise, just list all options.
 
-# If nothing is specified, just list out all domains.
 if [ "${#}" == 0 ]
 then
   echo "Nothing picked up. Listing all options.. ";
-  allOptions
+  search_term=$1
+  searchLogs $search_term
 else
-  doSearch $1
+  search_term=null
+  searchLogs $search_term
 fi
