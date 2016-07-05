@@ -3,7 +3,7 @@ domlogs='/usr/local/apache/domlogs/'$USER; # Just to declare the domlog path.
 
 ## Start off by initializing the functions
 searchLogs() {
-  echo "Testing -- " $search_term;
+  echo "Testing -- $search_term";
 }
 
 ## Start the actual code (after picking up parameters and what not)
