@@ -15,13 +15,30 @@ searchLogs() {
       d_x=$((d_x + 1));
     done
   
-  #echo; echo -ne "Type the number of the path you wish to review: "; read;
+  echo; echo -ne "Type the number of the path you wish to review: "; read;
   
-  #domain_toread=$(eval echo "\$dom$REPLY");
+  domain_toread=$(eval echo "\$dom$REPLY");
+  
+  if (( $REPLY > $((d_x - 1)) || $REPLY < 1)); then
+    echo "Invalid entry.. exiting"; exit 1;
+  fi
+  printData $domain_toread
   
   else
     echo "Picked up variable -- $search_term";
   fi
+}
+
+printData() {
+  echo "-----------------------------";
+  echo "Obtaining data from" $domain_toread; echo;
+  echo ">> Last 5 entries:";
+  
+  awk '{print $1}' $domain_toread |uniq -c |tail -n5;
+  echo; echo ">> Top 10:";
+  awk '{print $1}' $domain_toread |sort |uniq -c |sort -nr |head -n10;
+  echo; echo ">> Top 10 Links:";
+  awk '{print $1, $7}' $domain_toread |sort |uniq -c |sort -nr |head -n10;
 }
 
 ## Start the actual code (after picking up parameters and what not)
