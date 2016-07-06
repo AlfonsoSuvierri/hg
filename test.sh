@@ -36,7 +36,7 @@ searchLogs() {
     echo; echo -ne "Type the number of the path you wish to review: "; read;
     domain_toread=$(eval echo "\$dom$REPLY");
     echo "READ $REPLY";
-    echo "CUR DOM IS $dom";
+    echo "CUR DOM IS $dom1";
     
     #if (( $REPLY > $((d_x - 1)) || $REPLY < 1 )); then
     if (( $REPLY < 1 )); then
