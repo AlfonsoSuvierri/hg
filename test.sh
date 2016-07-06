@@ -38,7 +38,8 @@ searchLogs() {
     echo "TEST $domain_toread";
     echo $dom$REPLY;
     
-    if (( $REPLY > $((d_x - 1)) || $REPLY < 1)); then
+    #if (( $REPLY > $((d_x - 1)) || $REPLY < 1 )); then
+    if (( $REPLY < 1 )); then
       echo "Invalid entry.. exiting"; exit 1;
     fi
     
