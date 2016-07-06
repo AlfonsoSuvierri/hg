@@ -34,7 +34,8 @@ searchLogs() {
     
     echo; echo -ne "Type the number of the path you wish to review: "; read;
     domain_toread=$(eval echo "\$dom$REPLY");
-    echo $domain_toread;
+    echo "TEST $domain_toread";
+    echo $dom$REPLY;
     
     if (( $REPLY > $((d_x - 1)) || $REPLY < 1)); then
       echo "Invalid entry.. exiting"; exit 1;
