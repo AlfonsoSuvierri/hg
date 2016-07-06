@@ -30,7 +30,7 @@ searchLogs() {
       do
         echo $d_x." $line";
         eval dom$d_x=$line;
-        d_x=$((d_x + 1));
+        export d_x=$((d_x + 1));
       done
     
     echo; echo -ne "Type the number of the path you wish to review: "; read;
@@ -40,8 +40,7 @@ searchLogs() {
     echo "READ $REPLY";
     echo "CUR DOM IS $dom1";
     
-    #if (( $REPLY > $((d_x - 1)) || $REPLY < 1 )); then
-    if (( $REPLY < 1 )); then
+    if (( $REPLY > $((d_x - 1)) || $REPLY < 1 )); then
       echo "Invalid entry.. exiting"; exit 1;
     fi
     
