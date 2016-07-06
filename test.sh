@@ -35,8 +35,6 @@ searchLogs() {
         echo ${domList[@]};
       done
     
-    echo ${domList[1]};
-    
     echo; echo -ne "Type the number of the path you wish to review: "; read;
     domain_toread=$(eval echo "\$dom$REPLY");
     
