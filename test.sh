@@ -32,6 +32,7 @@ searchLogs() {
         eval dom$d_x=$line;
         domList[$d_x]=$line;
         d_x=$((d_x + 1));
+        echo ${domList[1]};
       done
     
     echo ${domList[1]};
