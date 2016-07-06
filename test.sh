@@ -3,9 +3,9 @@ domlogs='/usr/local/apache/domlogs/'$USER; # Just to declare the domlog path.
 
 ## Start off by initializing the functions
 searchLogs() {
+  d_x=1;
   if [ ! "$search_term" ]
   then {
-  d_x=1;
   echo "Obtaining options for" $USER; echo;
   
   for option in "$domlogs"/* 
