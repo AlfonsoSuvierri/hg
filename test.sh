@@ -4,7 +4,7 @@ domlogs='/usr/local/apache/domlogs/'$USER; # Just to declare the domlog path.
 ## Start off by initializing the functions
 searchLogs() {
   if [ ! "$search_term" ]
-  then ## Start to pull all options for the domlogs
+  then { ## Start to pull all options for the domlogs
   d_x=1;
   echo "Obtaining options for" $USER; echo;
   
@@ -21,7 +21,7 @@ searchLogs() {
   
   if (( $REPLY > $((d_x - 1)) || $REPLY < 1)); then
     echo "Invalid entry.. exiting"; exit 1;
-  fi
+  } fi
   printData $domain_toread
   
   else
