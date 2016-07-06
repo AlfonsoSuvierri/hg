@@ -30,15 +30,18 @@ searchLogs() {
       do
         echo $d_x." $line";
         eval dom$d_x=$line;
-        export d_x=$((d_x + 1));
+        domList[$d_x]=$line;
+        d_x=$((d_x + 1));
       done
+    
+    echo ${domList[1]};
     
     echo; echo -ne "Type the number of the path you wish to review: "; read;
     domain_toread=$(eval echo "\$dom$REPLY");
     
-    echo "DX TEST -- $d_x";
-    echo "READ $REPLY";
-    echo "CUR DOM IS $dom1";
+    #echo "DX TEST -- $d_x";
+    #echo "READ $REPLY";
+    #echo "CUR DOM IS $dom1";
     
     if (( $REPLY > $((d_x - 1)) || $REPLY < 1 )); then
       echo "Invalid entry.. exiting"; exit 1;
