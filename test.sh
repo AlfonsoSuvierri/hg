@@ -26,11 +26,12 @@ searchLogs() {
   } else {
     echo "Picked up variable -- $search_term";
     
-    find $domlogs -type f -iname "*$search_term*" -print0 | while IFS= read -r -d $'\0' line; do
-      echo $d_x." $line";
-      eval dom$d_x=$line;
-      d_x=$((d_x + 1));
-    done
+    find $domlogs -type f -iname "*$search_term*" -print0 | while IFS= read -r -d $'\0' line; 
+      do
+        echo $d_x." $line";
+        eval dom$d_x=$line;
+        d_x=$((d_x + 1));
+      done
     
     echo; echo -ne "Type the number of the path you wish to review: "; read;
     domain_toread=$(eval echo "\$dom$REPLY");
