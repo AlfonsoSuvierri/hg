@@ -32,9 +32,10 @@ searchLogs() {
         eval dom$d_x=$line;
         domList[$d_x]=$line;
         d_x=$((d_x + 1));
-        echo ${domList[@]};
+        #echo ${domList[@]};
       done
     
+    echo ${domList[@]};
     echo; echo -ne "Type the number of the path you wish to review: "; read;
     domain_toread=$(eval echo "\$dom$REPLY");
     
