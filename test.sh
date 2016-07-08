@@ -33,8 +33,9 @@ searchLogs() {
         domList[$d_x]=$line;
         d_x=$((d_x + 1));
         echo ${domList[@]};
+        export myArray=("Hello" "World")
       done
-    
+    echo("TEST IS $IFS");
     echo ${domList[@]};
     echo; echo -ne "Type the number of the path you wish to review: "; read;
     domain_toread=$(eval echo "\$dom$REPLY");
