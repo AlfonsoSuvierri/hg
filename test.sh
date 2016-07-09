@@ -49,6 +49,7 @@ searchLogs() {
 }
 
 getSearchOptions() {
+  d_x=1;
   find $domlogs -type f -iname "*$search_term*" -print0 | while IFS= read -r -d $'\0' line; 
     do
       echo $d_x." $line";
