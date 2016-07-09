@@ -53,6 +53,7 @@ getSearchOptions() {
   #Okay, so let's see what we're working with first..
   echo "Searching for.. $search_term";
   
+  find $domlogs -type f -iname '*$search_term'; 
 }
 
 printData() {
