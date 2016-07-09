@@ -53,7 +53,11 @@ getSearchOptions() {
   #Okay, so let's see what we're working with first..
   echo "Searching for.. $search_term";
   
-  find $domlogs -type f -iname '*$search_term' -print0; 
+  find $domlogs -type f -iname "*$search_term*" -print0 | while IFS= read -r -d $'\0' line; do
+    ((testcount++))
+  done < <(grep PATH /etc/profile)
+  
+  echo "Returned var count -- $testcount";
 }
 
 printData() {
