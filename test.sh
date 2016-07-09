@@ -50,10 +50,10 @@ searchLogs() {
 }
 
 getSearchOptions() {
-  find $domlogs -type f -iname "*$search_term*" -print0 | while IFS= read -r -d $'\0' line;
-    do
-      return $line
-    done
+  #find $domlogs -type f -iname "*$search_term*" -print0 | while IFS= read -r -d $'\0' line;
+  $line=find $domlogs -type f -iname "*$search_term*" -print0;
+  
+  return $line;
 }
 
 printData() {
