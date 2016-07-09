@@ -29,8 +29,6 @@ searchLogs() {
     ## Call the function to set the return value.
     getSearchOptions $search_term
     
-    echo " ----- The returned value is $?";
-    echo "TEST IS --- $line";
     
     echo; echo -ne "Type the number of the path you wish to review: "; read;
     domain_toread=$(eval echo "\$dom$REPLY");
@@ -51,9 +49,10 @@ searchLogs() {
 
 getSearchOptions() {
   #find $domlogs -type f -iname "*$search_term*" -print0 | while IFS= read -r -d $'\0' line;
-  line=$(find $domlogs -type f -iname "*$search_term*");
   
-  echo "ZZZ-- $line";
+  #Okay, so let's see what we're working with first..
+  echo "Searching for.. $search_term";
+  
 }
 
 printData() {
