@@ -30,6 +30,7 @@ searchLogs() {
     getSearchOptions $search_term
     
     echo " ----- The returned value is $?";
+    echo "TEST IS --- ${domList[@]}";
     
     echo; echo -ne "Type the number of the path you wish to review: "; read;
     domain_toread=$(eval echo "\$dom$REPLY");
@@ -57,7 +58,7 @@ getSearchOptions() {
       domList[$d_x]=$line;
       d_x=$((d_x + 1));
       echo ${domList[@]};
-      return ${domList[@]};
+      return 0
     done
 }
 
